@@ -33,14 +33,24 @@ export default function Home() {
           Off-chain
         </Subtitle>
         <ul style={{marginBottom: 30}}>
-          <li>
+          <li style={{marginBottom: 10}}>
               <Link href="/off-chain/simple-claim">
                 Simple claim on a groupId with devMode true
               </Link>
           </li>
-          <li>
+          <li style={{marginBottom: 10}}>
               <Link href="/off-chain/simple-auth">
                 Simple auth for Data Vault ownership
+              </Link>
+          </li>
+          <li style={{marginBottom: 10}}>
+              <Link href="/off-chain/auth-and-claim">
+                Claim on a groupId with devMode true and Data Vault ownership
+              </Link>
+          </li>
+          <li style={{marginBottom: 10}}>
+              <Link href="/off-chain/two-auths-claim-and-signature">
+                Claim on a groupId with devMode true / optional Twitter account ownership / required GitHub account ownership and signature
               </Link>
           </li>
         </ul>

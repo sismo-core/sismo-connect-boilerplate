@@ -4,6 +4,7 @@ import {
   SismoConnectButton,
   SismoConnectClientConfig,
   SismoConnectResponse,
+  AuthType
 } from "@sismo-core/sismo-connect-react";
 import axios from "axios";
 import { useState } from "react";
@@ -13,30 +14,20 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
   devMode: {
     // enable or disable dev mode here to create development groups and use the development vault.
     enabled: true,
-    devGroups: [
-      {
-        groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
-        // Add your dev addresses here to become eligible in the DEV env
-        data: [
-          "0x2b9b9846d7298e0272c61669a54f0e602aba6290",
-          "0x3f559454185098cb3a496f864a4bdd82b34c7fd1",
-          "0x855193BCbdbD346B423FF830b507CBf90ecCc90B"
-        ],
-      },
-    ],
   },
   vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
 };
 
-export default function OffChainSimpleClaim() {
+export default function OffChainAuthAndClaim() {
   const [verifying, setVerifying] = useState(false);
   const [error, setError] = useState(null);
   const [isVerified, setIsVerified] = useState(false);
 
   const verify = async (response: SismoConnectResponse) => {
     setVerifying(true);
+    console.log(response)
     try {
-        await axios.post(`/api/verify-simple-claim`, {
+        await axios.post(`/api/verify-two-auths-claim-and-signature`, {
             response,
         })
         setIsVerified(true);
@@ -51,18 +42,22 @@ export default function OffChainSimpleClaim() {
   return (
     <Container>
         <Title>
-            Simple claim off-chain
+           Claim / optional Twitter account / required GitHub account and signature
         </Title>
         {
             !isVerified ?
             <>
                 <SismoConnectButton
                     config={sismoConnectConfig}
-                    signature={{ message: "0x1234568" }}
+                    auths={[
+                      {authType: AuthType.TWITTER, isOptional: true},
+                      {authType: AuthType.GITHUB}
+                    ]}
                     claims={[{ groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" }]}
+                    signature={{message: "0x1234568"}}
                     onResponse={(response: SismoConnectResponse) => verify(response)}
                     verifying={verifying}
-                    callbackPath={"/off-chain/simple-claim"}
+                    callbackPath={"/off-chain/two-auths-claim-and-signature"}
                     overrideStyle={{marginBottom: 10}}
                 />
                 <>

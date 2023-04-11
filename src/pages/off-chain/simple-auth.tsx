@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x112a692a2005259c25f6094161007967",
-  vaultAppBaseUrl: "http://localhost:3000"
+  vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
 };
 
 export default function OffChainSimpleAuth() {
