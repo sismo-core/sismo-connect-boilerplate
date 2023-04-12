@@ -1,0 +1,6 @@
+[submodule "contracts/lib/forge-std"]
+	path = contracts/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "contracts/lib/sismo-connect-packages"]
+	path = contracts/lib/sismo-connect-packages
+	url = https://github.com/sismo-core/sismo-connect-packages

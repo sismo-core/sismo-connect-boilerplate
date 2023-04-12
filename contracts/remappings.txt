@@ -1,0 +1,2 @@
+forge-std/=lib/forge-std/src/
+sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/

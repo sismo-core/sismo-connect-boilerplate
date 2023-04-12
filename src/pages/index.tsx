@@ -28,6 +28,21 @@ export default function Home() {
                 Simple claim on a groupId with devMode true
               </Link>
           </li>
+          <li>
+              <Link href="/on-chain/simple-auth">
+                Simple auth for Data Vault ownership
+              </Link>
+          </li>
+          <li>
+              <Link href="/on-chain/auth-and-claim">
+                Claim on a groupId with devMode true and Data Vault ownership
+              </Link>
+          </li>
+          <li>
+              <Link href="/on-chain/two-auths-and-claim">
+                Claim on a groupId with devMode true / optional Twitter account ownership / required GitHub account ownership and signature
+              </Link>
+          </li>
         </ul>
         <Subtitle>
           Off-chain
