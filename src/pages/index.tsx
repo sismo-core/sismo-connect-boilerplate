@@ -38,6 +38,11 @@ export default function Home() {
                 Simple claim on a groupId with devMode true
               </Link>
           </li>
+          <li>
+              <Link href="/off-chain/simple-auth">
+                Simple auth for Data Vault ownership
+              </Link>
+          </li>
         </ul>
       </Content>
     </Container>

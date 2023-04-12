@@ -14,7 +14,7 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
     enabled: true,
     devGroups: [
       {
-        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+        groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
         // Add your dev addresses here to become eligible in the DEV env
         data: [
           "0x2b9b9846d7298e0272c61669a54f0e602aba6290",
@@ -56,7 +56,7 @@ export default function OnChainSimpleClaim() {
                 <SismoConnectButton
                     config={sismoConnectConfig}
                     signature={{ message: "0x1234568" }}
-                    claims={[{ groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" }]}
+                    claims={[{ groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" }]}
                     onResponse={(response: SismoConnectResponse) => verify(response)}
                     verifying={verifying}
                     callbackPath={"/on-chain/simple-claim"}
