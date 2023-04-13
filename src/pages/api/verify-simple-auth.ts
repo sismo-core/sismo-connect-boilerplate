@@ -8,8 +8,6 @@ const sismoConnectConfig: SismoConnectServerConfig = {
 
 const sismoConnect = SismoConnect(sismoConnectConfig);
 
-const auths = [{authType: AuthType.VAULT}];
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<void>
@@ -17,12 +15,14 @@ export default async function handler(
   const { response } = req.body;
   try {
     const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
-      auths
+      auths: [{authType: AuthType.VAULT}]
     });
     console.log("Response verified:", result.response);
     console.log("Anonymized userId: ", result.getUserId(AuthType.VAULT))
     res.status(200).send();
   } catch (e: any) {
+    console.log("response:", response.proofs[0]);
+    console.error(e);
     res.status(400).send();
   }
 }

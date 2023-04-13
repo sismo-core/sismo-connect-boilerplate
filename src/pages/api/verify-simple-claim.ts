@@ -12,12 +12,6 @@ const sismoConnectConfig: SismoConnectServerConfig = {
 
 const sismoConnect = SismoConnect(sismoConnectConfig);
 
-const claims = [{
-  groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
-}];
-
-const signature = { message: "0x1234568" }
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<void>
@@ -26,12 +20,15 @@ export default async function handler(
   const { response } = req.body;
   try {
     const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
-      claims,
-      signature
+      claims: [{
+        groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
+      }],
+      signature: { message: "0x1234568" }
     });
     console.log("Response verified:", result.response);
     res.status(200).send();
   } catch (e: any) {
+    console.error(e);
     res.status(400).send();
   }
 }

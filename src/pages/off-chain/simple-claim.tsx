@@ -18,7 +18,7 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
         groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
         // Add your dev addresses here to become eligible in the DEV env
         data: [
-          "0x2b9b9846d7298e0272c61669a54f0e602aba6290",
+          "0xb01ee322c4f028b8a6bfcd2a5d48107dc5bc99ec",
           "0x3f559454185098cb3a496f864a4bdd82b34c7fd1",
           "0x855193BCbdbD346B423FF830b507CBf90ecCc90B"
         ],

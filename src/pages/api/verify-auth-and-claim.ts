@@ -20,11 +20,13 @@ export default async function handler(
     const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
       claims: [{groupId: "0xe9ed316946d3d98dfcd829a53ec9822e"}],
       auths: [{authType: AuthType.VAULT}],
+      signature: {message: "0x1234568"}
     });
     console.log("Response verified:", result.response);
     console.log("Anonymized userId: ", result.getUserId(AuthType.VAULT))
     res.status(200).send();
   } catch (e: any) {
+    console.error(e);
     res.status(400).send();
   }
 }
