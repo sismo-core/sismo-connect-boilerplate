@@ -6,6 +6,7 @@ import {
 } from "@sismo-core/sismo-connect-react";
 import { useState } from "react";
 import { ethers } from 'ethers';
+import { ResponseBytes } from "@/components/ResponseBytes";
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x112a692a2005259c25f6094161007967",
@@ -31,10 +32,12 @@ export default function OnChainSimpleClaim() {
   const [verifying, setVerifying] = useState(false);
   const [error, setError] = useState(null);
   const [isVerified, setIsVerified] = useState(false);
+  const [responseBytes, setResponseBytes] = useState(null);
 
   const verify = async (responseBytes: string) => {
     setVerifying(true);
     console.log("responseBytes", responseBytes);
+    setResponseBytes(responseBytes);
     //TODO Call contract
     /*
         const instance = new ethers.Contract(
@@ -67,6 +70,13 @@ export default function OnChainSimpleClaim() {
                     callbackPath={"/on-chain/simple-claim"}
                     overrideStyle={{marginBottom: 10}}
                 />
+                {
+                  responseBytes && 
+                    <ResponseBytes>
+                      ResponseBytes:
+                      {JSON.stringify(responseBytes)}
+                    </ResponseBytes>
+                }
                 <>
                 {error}
                 </>
