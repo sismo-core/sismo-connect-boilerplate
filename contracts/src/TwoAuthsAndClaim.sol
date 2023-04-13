@@ -8,22 +8,28 @@ contract TwoAuthsAndClaim is SismoConnect {
     uint256 public counter;
 
     constructor(bytes16 _appId, bytes16 groupId) SismoConnect(_appId) {
-      GROUP_ID = groupId;
+        GROUP_ID = groupId;
     }
 
-    function incrementWithSismoConnect(bytes memory response, uint256 number) public {
+    function incrementWithSismoConnect(
+        bytes memory response,
+        uint256 number
+    ) public {
         AuthRequest[] memory auths = new AuthRequest[](2);
-        auths[0] = AuthRequestBuilder.build({authType:AuthType.TWITTER, isOptional: true});
-        auths[1] = AuthRequestBuilder.build({authType:AuthType.GITHUB});
+        auths[0] = AuthRequestBuilder.build({
+            authType: AuthType.TWITTER,
+            isOptional: true
+        });
+        auths[1] = AuthRequestBuilder.build({authType: AuthType.GITHUB});
 
         ClaimRequest[] memory claims = new ClaimRequest[](1);
         claims[0] = ClaimRequestBuilder.build({groupId: GROUP_ID});
 
         SismoConnectRequest memory request = RequestBuilder.buildRequest({
-          claims: claims,
-          auths: auths,
-          signature: buildSignature({message: abi.encode(number)}),
-          appId: appId
+            auths: auths,
+            claims: claims,
+            signature: buildSignature({message: abi.encode(number)}),
+            appId: appId
         });
 
         SismoConnectVerifiedResult memory result = verify({

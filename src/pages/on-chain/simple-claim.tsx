@@ -18,12 +18,13 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
         // Add your dev addresses here to become eligible in the DEV env
         data: [
           "0x2b9b9846d7298e0272c61669a54f0e602aba6290",
-          "0x3f559454185098cb3a496f864a4bdd82b34c7fd1",
+          "0xF61CabBa1e6FC166A66bcA0fcaa83762EdB6D4Bd",
         ],
       },
     ],
   },
-  vaultAppBaseUrl: "http://localhost:3000"
+  vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
+  // vaultAppBaseUrl: "http://localhost:3000"
 };
 
 export default function OnChainSimpleClaim() {
@@ -33,6 +34,7 @@ export default function OnChainSimpleClaim() {
 
   const verify = async (responseBytes: string) => {
     setVerifying(true);
+    console.log("responseBytes", responseBytes);
     //TODO Call contract
     /*
         const instance = new ethers.Contract(

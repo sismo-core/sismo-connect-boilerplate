@@ -11,7 +11,10 @@ contract SimpleClaim is SismoConnect {
         GROUP_ID = groupId;
     }
 
-    function incrementWithSismoConnect(bytes memory response, uint256 number) public {
+    function incrementWithSismoConnect(
+        bytes memory response,
+        uint256 number
+    ) public {
         SismoConnectVerifiedResult memory result = verify({
             responseBytes: response,
             claim: buildClaim({groupId: GROUP_ID}),

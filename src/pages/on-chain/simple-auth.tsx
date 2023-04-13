@@ -20,6 +20,7 @@ export default function OnChainSimpleClaim() {
 
   const verify = async (responseBytes: string) => {
     setVerifying(true);
+    console.log("responseBytes", responseBytes);
     //TODO Call contract
     /*
         const instance = new ethers.Contract(

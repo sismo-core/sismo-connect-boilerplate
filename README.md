@@ -43,6 +43,14 @@ Here are the path to the different examples:
 yarn
 ```
 
+### Start frontend
+
+```bash
+yarn dev
+```
+
+The frontend is now available on http://localhost:3000/
+
 ### Run contract tests
   
 ```bash

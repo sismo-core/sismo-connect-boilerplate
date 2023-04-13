@@ -8,13 +8,16 @@ contract AuthAndClaim is SismoConnect {
     uint256 public counter;
 
     constructor(bytes16 _appId, bytes16 groupId) SismoConnect(_appId) {
-      GROUP_ID = groupId;
+        GROUP_ID = groupId;
     }
 
-    function incrementWithSismoConnect(bytes memory response, uint256 number) public {
+    function incrementWithSismoConnect(
+        bytes memory response,
+        uint256 number
+    ) public {
         SismoConnectVerifiedResult memory result = verify({
             responseBytes: response,
-            auth: buildAuth({authType:AuthType.VAULT}),
+            auth: buildAuth({authType: AuthType.VAULT}),
             claim: buildClaim({groupId: GROUP_ID}),
             signature: buildSignature({message: abi.encode(number)})
         });
