@@ -15,7 +15,6 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
     // enable or disable dev mode here to create development groups and use the development vault.
     enabled: true,
   },
-  vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
 };
 
 export default function OffChainAuthAndClaim() {

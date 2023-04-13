@@ -24,8 +24,6 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
       },
     ],
   },
-  vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
-  // vaultAppBaseUrl: "http://localhost:3000"
 };
 
 export default function OnChainSimpleClaim() {

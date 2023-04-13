@@ -11,7 +11,9 @@ import { ResponseBytes } from "@/components/ResponseBytes";
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x112a692a2005259c25f6094161007967",
-  vaultAppBaseUrl: "http://staging.dev.vault-beta.sismo.io"
+  devMode: {
+    enabled: true,
+  }
 };
 
 export default function OnChainSimpleClaim() {
