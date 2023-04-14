@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-http-header-size=24576' next dev -p 3001",
+    "dev": "NODE_OPTIONS='--max-http-header-size=2457655' next dev -p 3001",
     "build": "next build",
-    "start": "NODE_OPTIONS='--max-http-header-size=24576' next start",
+    "start": "NODE_OPTIONS='--max-http-header-size=2457655' next start",
     "lint": "next lint"
   },
   "dependencies": {

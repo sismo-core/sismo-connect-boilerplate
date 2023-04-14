@@ -68,6 +68,11 @@ export default function Home() {
                 Claim on a groupId with devMode true / optional Twitter account ownership / required GitHub account ownership and signature
               </Link>
           </li>
+          <li style={{marginBottom: 10}}>
+              <Link href="/off-chain/complex">
+                COMPLEX
+              </Link>
+          </li>
         </ul>
       </Content>
     </Container>

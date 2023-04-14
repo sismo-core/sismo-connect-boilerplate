@@ -20,7 +20,8 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
         data: [
           "0xb01ee322c4f028b8a6bfcd2a5d48107dc5bc99ec",
           "0x3f559454185098cb3a496f864a4bdd82b34c7fd1",
-          "0x855193BCbdbD346B423FF830b507CBf90ecCc90B"
+          "0x855193BCbdbD346B423FF830b507CBf90ecCc90B",
+          "0x938f169352008d35e065F153be53b3D3C07Bcd90"
         ],
       },
     ],

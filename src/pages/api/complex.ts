@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { SismoConnect, SismoConnectServerConfig, AuthType, SismoConnectVerifiedResult } from '@sismo-core/sismo-connect-server';
+import { auths, claims, signature } from '../off-chain/complex';
 
 const sismoConnectConfig: SismoConnectServerConfig = {
   appId: "0x112a692a2005259c25f6094161007967",
@@ -19,12 +20,9 @@ export default async function handler(
   console.log("Received response:", response)
   try {
     const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
-      auths: [
-        {authType: AuthType.TWITTER, isOptional: true},
-        {authType: AuthType.GITHUB},
-      ],
-      claims: [{groupId: "0xe9ed316946d3d98dfcd829a53ec9822e"}],
-      signature: {message: "0x1234568"}
+      auths: auths,
+      claims: claims,
+      signature: signature
     });
     console.log("Response verified:", result.response);
     console.log("Anonymized userId: ", result.getUserId(AuthType.GITHUB))
