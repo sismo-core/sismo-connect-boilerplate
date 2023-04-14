@@ -54,7 +54,8 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
       // },
     ],
   },
-  vaultAppBaseUrl: "http://dev.vault-beta.sismo.io"
+ // vaultAppBaseUrl: "http://dev.vault-beta.sismo.io"
+ vaultAppBaseUrl: "http://localhost:3000"
 };
 
 export const signature: SignatureRequest = {
@@ -65,40 +66,40 @@ export const signature: SignatureRequest = {
 };
 
 export const claims = [
-  {
-    claimType: ClaimType.GTE,
-    groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
-    groupTimestamp: "latest",
-    isOptional: false,
-    isSelectableByUser: true,
-    value: 1,
-    extraData: "",
-  } as ClaimRequest,
-  {
-    claimType: ClaimType.GTE,
-    groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
-    groupTimestamp: "latest",
-    isOptional: false,
-    isSelectableByUser: true,
-    value: 1,
-    extraData: "",
-  } as ClaimRequest,
-  {
-    claimType: ClaimType.EQ,
-    groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
-    groupTimestamp: "latest",
-    isOptional: true,
-    isSelectableByUser: true,
-    value: 3,
-    extraData: "",
-  } as ClaimRequest,
+  // {
+  //   claimType: ClaimType.GTE,
+  //   groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
+  //   groupTimestamp: "latest",
+  //   isOptional: false,
+  //   isSelectableByUser: true,
+  //   value: 1,
+  //   extraData: "",
+  // } as ClaimRequest,
+  // {
+  //   claimType: ClaimType.GTE,
+  //   groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
+  //   groupTimestamp: "latest",
+  //   isOptional: false,
+  //   isSelectableByUser: true,
+  //   value: 1,
+  //   extraData: "",
+  // } as ClaimRequest,
+  // {
+  //   claimType: ClaimType.EQ,
+  //   groupId: "0xd138c33e8a6a450336a6c5dda990cf95",
+  //   groupTimestamp: "latest",
+  //   isOptional: false,
+  //   isSelectableByUser: true,
+  //   value: 3,
+  //   extraData: "",
+  // } as ClaimRequest,
 ]
 
 export const auths: AuthRequest[] = [
   // {
   //   authType: AuthType.VAULT,
   //   isAnon: false,
-  //  // userId: "0x938f169352008d35e065F153be53b3D3C07Bcd90",
+  //   userId: "0x938f169352008d35e065F153be53b3D3C07Bcd90",
   //   isOptional: false,
   //   isSelectableByUser: false,
   //   extraData: "",
@@ -108,6 +109,14 @@ export const auths: AuthRequest[] = [
   //   isAnon: false,
   //   userId: "0x25fcc2A4B8e5387649ba3B6DeDDcAC343D8E11B6",
   //   isOptional: false,
+  //   isSelectableByUser: false,
+  //   extraData: "",
+  // },
+  // {
+  //   authType: AuthType.EVM_ACCOUNT,
+  //   isAnon: false,
+  //   userId: "0x938f169352008d35e065F153be53b3D3C07Bcd90",
+  //   isOptional: true,
   //   isSelectableByUser: false,
   //   extraData: "",
   // },
