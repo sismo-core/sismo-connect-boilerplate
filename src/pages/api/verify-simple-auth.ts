@@ -18,7 +18,9 @@ export default async function handler(
       auths: [{authType: AuthType.VAULT}]
     });
     console.log("Response verified:", result.response);
-    console.log("Anonymized userId: ", result.getUserId(AuthType.VAULT))
+    // vaultId = hash(userVaultSecret, appId). 
+    // the vaultId is an app-specific, anonymous identifier of a vault
+    console.log("VaultId: ", result.getUserId(AuthType.VAULT))
     res.status(200).send();
   } catch (e: any) {
     console.log("response:", response.proofs[0]);
