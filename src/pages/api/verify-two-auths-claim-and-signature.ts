@@ -26,7 +26,8 @@ export default async function handler(
       signature: {message: "0x1234568"}
     });
     console.log("Response verified:", result.response);
-    console.log("Anonymized userId: ", result.getUserId(AuthType.GITHUB))
+    console.log("Github Id: ", result.getUserId(AuthType.GITHUB))
+    console.log("Twitter Id: ", result.getUserId(AuthType.TWITTER))
     res.status(200).send();
   } catch (e: any) {
     console.log(e);
