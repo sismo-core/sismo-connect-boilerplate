@@ -4,24 +4,21 @@ pragma solidity ^0.8.13;
 import "sismo-connect-solidity/SismoLib.sol";
 
 contract AuthAndClaim is SismoConnect {
-    bytes16 public immutable GROUP_ID;
-    uint256 public counter;
+  bytes16 public immutable GROUP_ID;
+  uint256 public counter;
 
-    constructor(bytes16 _appId, bytes16 groupId) SismoConnect(_appId) {
-        GROUP_ID = groupId;
-    }
+  constructor(bytes16 _appId, bytes16 groupId) SismoConnect(_appId) {
+    GROUP_ID = groupId;
+  }
 
-    function incrementWithSismoConnect(
-        bytes memory response,
-        uint256 number
-    ) public {
-        SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
-            auth: buildAuth({authType: AuthType.VAULT}),
-            claim: buildClaim({groupId: GROUP_ID}),
-            signature: buildSignature({message: abi.encode(number)})
-        });
+  function incrementWithSismoConnect(bytes memory response, uint256 number) public {
+    SismoConnectVerifiedResult memory result = verify({
+      responseBytes: response,
+      auth: buildAuth({authType: AuthType.VAULT}),
+      claim: buildClaim({groupId: GROUP_ID}),
+      signature: buildSignature({message: abi.encode(number)})
+    });
 
-        counter += number;
-    }
+    counter += number;
+  }
 }

@@ -52,8 +52,16 @@ yarn dev
 The frontend is now available on http://localhost:3000/
 
 ### Run contract tests
-  
+
+sismoConnectVerifier contracts are currently deployed on goerli and mumbai.
+You can find the deployed addresses [here](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-101) 
+
 ```bash
 cd contracts
+
+## Run fork test with goerli
 forge test --fork-url https://rpc.ankr.com/eth_goerli
+
+## Run fork test with mumbai
+forge test --fork-url https://polygon-mumbai.g.alchemy.com/v2/API_KEY 
 ```
