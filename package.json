@@ -6,7 +6,12 @@
     "dev": "NODE_OPTIONS='--max-http-header-size=24576' next dev",
     "build": "next build",
     "start": "NODE_OPTIONS='--max-http-header-size=24576' next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy-local": "yarn deploy-auth-and-claim && yarn deploy-simple-auth && yarn deploy-simple-claim && yarn deploy-two-auths-and-claim",
+    "deploy-auth-and-claim": "forge script DeployAuthAndClaim --rpc-url http://localhost:8545 -vvvvv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-simple-auth": "forge script DeploySimpleAuth --rpc-url http://localhost:8545 -vvvvv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-simple-claim": "forge script DeploySimpleClaim --rpc-url http://localhost:8545 -vvvvv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-two-auths-and-claim": "forge script DeployTwoAuthsAndClaim --rpc-url http://localhost:8545 -vvvvv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast"
   },
   "dependencies": {
     "@sismo-core/sismo-connect-react": "^0.0.10",
