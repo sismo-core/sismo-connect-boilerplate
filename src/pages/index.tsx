@@ -1,75 +1,65 @@
 import { Container } from "@/components/Container";
 import { Title } from "@/components/Title";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
-const Content = styled.div`
-  width: 500px;
-`
-
-const Subtitle = styled.div`
-  margin-bottom: 10px;
-  font-size: 20px;
-`
-
 export default function Home() {
+  const router = useRouter();
+
   return (
     <Container>
-      <Content>
-        <Title>
-          Sismo Connect boilerplate
-        </Title>
-        <Subtitle>
-          On-chain
-        </Subtitle>
+      <Title>Sismo Connect boilerplate</Title>
+      <section>
+        <h2>On-chain examples</h2>
         <ul>
-          <li>
-              <Link href="/on-chain/simple-claim">
-                Simple claim on a groupId with devMode true
-              </Link>
+          <li onClick={() => router.push("/on-chain/simple-claim")}>
+            <h3>Simple Claim</h3>
+            <p>on a groupId with devMode true</p> 
           </li>
-          <li>
-              <Link href="/on-chain/simple-auth">
-                Simple auth for Data Vault ownership
-              </Link>
+          <li onClick={() => router.push("/on-chain/simple-auth")}>
+            <h3>Simple Auth</h3>
+            <p>for Data Vault ownership</p> 
           </li>
-          <li>
-              <Link href="/on-chain/auth-and-claim">
-                Claim on a groupId with devMode true and Data Vault ownership
-              </Link>
+          <li onClick={() => router.push("/on-chain/auth-and-claim")}>
+            <h3>Simple Claim and Data Vault ownership</h3>
+            <p>- Claim on a groupId with devMode true </p>
+            <p>- Data Vault ownership</p>
           </li>
-          <li>
-              <Link href="/on-chain/two-auths-and-claim">
-                Claim on a groupId with devMode true / optional Twitter account ownership / required GitHub account ownership and signature
-              </Link>
-          </li>
-        </ul>
-        <Subtitle>
-          Off-chain
-        </Subtitle>
-        <ul style={{marginBottom: 30}}>
-          <li style={{marginBottom: 10}}>
-              <Link href="/off-chain/simple-claim">
-                Simple claim on a groupId with devMode true
-              </Link>
-          </li>
-          <li style={{marginBottom: 10}}>
-              <Link href="/off-chain/simple-auth">
-                Simple auth for Data Vault ownership
-              </Link>
-          </li>
-          <li style={{marginBottom: 10}}>
-              <Link href="/off-chain/auth-and-claim">
-                Claim on a groupId with devMode true and Data Vault ownership
-              </Link>
-          </li>
-          <li style={{marginBottom: 10}}>
-              <Link href="/off-chain/two-auths-claim-and-signature">
-                Claim on a groupId with devMode true / optional Twitter account ownership / required GitHub account ownership and signature
-              </Link>
+          <li onClick={() => router.push("/on-chain/two-auths-and-claim")}>
+            <h3>One Claim, two Auths and Signature</h3>
+            <p>- Claim on a groupId with devMode true</p>
+            <p>- Required GitHub account ownership</p>
+            <p>- Optional Twitter account ownership</p>
+            <p>- Message signature</p>
           </li>
         </ul>
-      </Content>
+      </section>
+      <section>
+        <h2>Off-chain examples</h2>
+        <ul>
+          <li onClick={() => router.push("/off-chain/simple-claim")}>
+            <h3>Simple Claim</h3>
+            <p>on a groupId with devMode true</p>
+          </li>
+          <li onClick={() => router.push("/off-chain/simple-auth")}>
+            <h3>Simple Auth</h3>
+            <p>for Data Vault ownership</p>
+          </li>
+          <li onClick={() => router.push("/off-chain/auth-and-claim")}>
+            <h3>Simple Claim and Data Vault ownership</h3>
+            <p>- Claim on a groupId with devMode true </p>
+            <p>- Data Vault ownership</p>
+          </li>
+          <li onClick={() => router.push("/off-chain/two-auths-claim-and-signature")}>
+            <h3>One Claim, two Auths and Signature</h3>
+            <p>- Claim on a groupId with devMode true</p>
+            <p>- Required GitHub account ownership</p>
+            <p>- Optional Twitter account ownership</p>
+            <p>- Message signature</p>
+          </li>
+        </ul>
+      </section>
     </Container>
-  )
+  );
 }

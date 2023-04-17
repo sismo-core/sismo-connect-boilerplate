@@ -6,7 +6,7 @@ import {
   SismoConnectClientConfig,
 } from "@sismo-core/sismo-connect-react";
 import { useState } from "react";
-import { ethers } from 'ethers';
+import { ethers } from "ethers";
 import { ResponseBytes } from "@/components/ResponseBytes";
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
@@ -38,45 +38,39 @@ export default function OnChainSimpleClaim() {
         return await instance.incrementWithSismoConnect(responseBytes, 3);
     */
     setVerifying(false);
-  }
+  };
 
   return (
     <Container>
-        <Title>
-            Simple Auth and Claim on-chain
-        </Title>
-        {
-            !isVerified ?
-            <>
-                <SismoConnectButton
-                    config={sismoConnectConfig}
-                    auths={[
-                      {authType: AuthType.TWITTER, isOptional: true},
-                      {authType: AuthType.GITHUB}
-                    ]}
-                    claims={[{ groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" }]}
-                    // we use the AbiCoder to encode the data we want to sign
-                    // by encoding it we will be able to decode it on chain
-                    signature={{ message: new ethers.AbiCoder().encode(['uint256'], ['3']), }}
-                    onResponseBytes={(responseBytes: string) => verify(responseBytes)}
-                    verifying={verifying}
-                    callbackPath={"/on-chain/two-auths-and-claim"}
-                    overrideStyle={{marginBottom: 10}}
-                />
-                {
-                  responseBytes && 
-                    <ResponseBytes>
-                      ResponseBytes:
-                      {JSON.stringify(responseBytes)}
-                    </ResponseBytes>
-                }
-                <>
-                {error}
-                </>
-            </>
-            :
-            "Response verified!"
-        }
+      <Title>Claim / optional Twitter account / required GitHub account and signature</Title>
+      {!isVerified ? (
+        <>
+          <SismoConnectButton
+            config={sismoConnectConfig}
+            auths={[
+              { authType: AuthType.TWITTER, isOptional: true },
+              { authType: AuthType.GITHUB },
+            ]}
+            claims={[{ groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" }]}
+            // we use the AbiCoder to encode the data we want to sign
+            // by encoding it we will be able to decode it on chain
+            signature={{ message: new ethers.AbiCoder().encode(["uint256"], ["3"]) }}
+            onResponseBytes={(responseBytes: string) => verify(responseBytes)}
+            verifying={verifying}
+            callbackPath={"/on-chain/two-auths-and-claim"}
+            overrideStyle={{ marginBottom: 10 }}
+          />
+          {responseBytes && (
+            <ResponseBytes>
+              ResponseBytes:
+              {JSON.stringify(responseBytes)}
+            </ResponseBytes>
+          )}
+          <>{error}</>
+        </>
+      ) : (
+        "Response verified!"
+      )}
     </Container>
   );
 }
