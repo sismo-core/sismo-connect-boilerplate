@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import {AuthAndClaim} from "../src/AuthAndClaim.sol";
+import {AuthAndClaim} from "../contracts/AuthAndClaim.sol";
 import {BaseTest} from "./base/BaseTest.t.sol";
 
 contract AuthAndClaimTest is BaseTest {

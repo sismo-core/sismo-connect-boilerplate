@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import {SimpleAuth} from "../src/SimpleAuth.sol";
+import {SimpleAuth} from "../contracts/SimpleAuth.sol";
 
 contract SimpleAuthTest is Test {
   bytes16 public constant APP_ID = 0x112a692a2005259c25f6094161007967;

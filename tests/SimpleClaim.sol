@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import {SimpleClaim} from "../src/SimpleClaim.sol";
+import {SimpleClaim} from "../contracts/SimpleClaim.sol";
 import {BaseTest} from "./base/BaseTest.t.sol";
 
 contract SimpleClaimTest is BaseTest {
