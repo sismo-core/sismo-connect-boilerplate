@@ -19,11 +19,85 @@ html {
 
 p {
   margin: 0px;
+  color: white;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto-Medium";
+}
+
+h2{
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255, 0.5);
+  width: 500px;
+  height: 150px;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+li:hover{
+  border: 1px solid rgba(255,255,255, 1);
+}
+
+li:active{
+  transform: translate(1px, 1px);
+
+}
+
+li:after{
+  position: absolute;
+  content: "→";
+  bottom: 15px;
+  right: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  transition: transform 0.1s ease-in-out;
+}
+
+li:hover:after{
+  transform: translate(5px, 0px);
 }
 
 code {
