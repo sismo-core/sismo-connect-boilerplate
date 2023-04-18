@@ -11,7 +11,6 @@ contract DeployAuthAndClaim is Script {
     function run() public {
         vm.startBroadcast();
         AuthAndClaim authAndClaim = new AuthAndClaim({_appId: APP_ID, _groupId: GROUP_ID});
-
         console.log("AuthAndClaim Contract deployed at", address(authAndClaim));
         vm.stopBroadcast();
     }

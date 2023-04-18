@@ -10,7 +10,6 @@ contract DeploySimpleAuth is Script {
     function run() public {
         vm.startBroadcast();
         SimpleAuth simpleAuth = new SimpleAuth({_appId: APP_ID});
-
         console.log("SimpleAuth Contract deployed at", address(simpleAuth));
         vm.stopBroadcast();
     }

@@ -11,7 +11,6 @@ contract DeploySimpleClaim is Script {
     function run() public {
         vm.startBroadcast();
         SimpleClaim simpleClaim = new SimpleClaim({_appId: APP_ID, _groupId: GROUP_ID});
-
         console.log("SimpleClaim Contract deployed at", address(simpleClaim));
         vm.stopBroadcast();
     }

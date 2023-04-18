@@ -11,7 +11,6 @@ contract DeployTwoAuthsAndClaim is Script {
     function run() public {
         vm.startBroadcast();
         TwoAuthsAndClaim twoAuthsAndClaim = new TwoAuthsAndClaim({_appId: APP_ID, _groupId: GROUP_ID});
-
         console.log("TwoAuthsAndClaim Contract deployed at", address(twoAuthsAndClaim));
         vm.stopBroadcast();
     }
