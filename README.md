@@ -72,6 +72,18 @@ yarn dev
 
 The frontend is now available on http://localhost:3001/
 
+### Deploy your contracts on a local blockchain forking Goerli
+
+```bash
+# start a local blockchain with goerli fork
+anvil --fork-url https://rpc.ankr.com/eth_goerli
+
+# deploy your contracts
+yarn deploy-local
+```
+
+You can now use the frontend to interact with your local contracts.
+
 ### Run contract tests
 
 sismoConnectVerifier contracts are currently deployed on Goerli and Mumbai.

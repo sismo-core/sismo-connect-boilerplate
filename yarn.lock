@@ -3207,7 +3207,7 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
-viem@^0.3.1:
+viem@^0.3.1, viem@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/viem/-/viem-0.3.2.tgz#adfd45aeeeda96782623d867f1b59a3aba2f1932"
   integrity sha512-JhoTT3JSnya17JYOjt8QALICkLIg0SVfYtP7RxF3uqTzPQq7ZtDSrZGgHbEGwIFhMmdRTz9SwDVCjloeAbirFA==

@@ -12,10 +12,6 @@ contract DeployTwoAuthsAndClaim is Script {
         vm.startBroadcast();
         TwoAuthsAndClaim twoAuthsAndClaim = new TwoAuthsAndClaim({_appId: APP_ID, _groupId: GROUP_ID});
 
-        // Check that the contract was deployed successfully on the local anvil network with the first account of the test mnemonic
-        // You can remove the following line if you are deploying to a different network
-        require(address(twoAuthsAndClaim) == 0xDdcCd8A0143204896A88627aBB24683eceb131C7, "TwoAuthsAndClaim contract needs to be deployed to the address 0xDdcCd8A0143204896A88627aBB24683eceb131C7 to make the boilerplate works. Please check that you are deploying FOR THE FOURTH TIME to a new local anvil network (forked from goerli for example) with the first account (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266) of the test mnemonic (test test test test test test test test test test test junk). If you are deploying to a different network, you can remove this check in script/TwoAuthsAndClaim.s.sol file.");
-
         console.log("TwoAuthsAndClaim Contract deployed at", address(twoAuthsAndClaim));
         vm.stopBroadcast();
     }
