@@ -67,34 +67,39 @@ forge install
 ### Start your local Next.js app
 
 ```bash
+# this will start your Next.js app
+# the frontend is available on http://localhost:3001/
+# it also starts a local backend
 yarn dev
 ```
 
 The frontend is now available on http://localhost:3001/
+You can now use the frontend on http://localhost:3001/ with off-chain examples.
 
-### Deploy your contracts on a local blockchain forking Goerli
+### Deploy your contracts on a local blockchain forking Mumbai
 
 ```bash
 # start a local blockchain with goerli fork
-anvil --fork-url https://rpc.ankr.com/eth_goerli
+anvil --fork-url https://rpc.ankr.com/polygon_mumbai
 
 # deploy your contracts
 yarn deploy-local
 ```
 
-You can now use the frontend to interact with your local contracts.
+You can now use the frontend on http://localhost:3001/ with on-chain examples as well.
 
 ### Run contract tests
 
 sismoConnectVerifier contracts are currently deployed on Goerli and Mumbai.
 You can find the deployed addresses [here](https://docs.sismo.io/sismo-docs/technical-documentation/sismo-101).
+You can then run tests on a local fork network to test your contracts.
 
 ```bash
-## Run fork test with goerli
+## Run fork tests with goerli
 forge test --fork-url https://rpc.ankr.com/eth_goerli
 
-## Run fork test with mumbai
-forge test --fork-url https://polygon-mumbai.g.alchemy.com/v2/API_KEY
+## Run fork tests with mumbai
+forge test --fork-url https://rpc.ankr.com/polygon_mumbai
 
 # you can aslo use the rpc url you want by passing an environment variable
 forge test --fork-url $RPC_URL
