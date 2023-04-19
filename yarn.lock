@@ -770,22 +770,22 @@
     ethers "^5.6.1"
     tslib "^2.4.0"
 
-"@sismo-core/sismo-connect-client@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@sismo-core/sismo-connect-client/-/sismo-connect-client-0.0.9.tgz#c51f083382e19fc283065bf6fd17a576f169d1ec"
-  integrity sha512-1l1aku4cfc2VJpCx09wg2kUcJC3LymjSlAKovm0DVIzwHWBof27VpGLkAU2rC4uIE9s+cGEyHvy2bp5E1YITKQ==
+"@sismo-core/sismo-connect-client@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@sismo-core/sismo-connect-client/-/sismo-connect-client-0.0.10.tgz#c7b873dc97d7e0d7155fffb3d20ad0043be581c2"
+  integrity sha512-lCRq3Q+GJBANn1P5FP7MqYDOSMdNwfAhZvrIWAcNhDKt1ImF6JiuedzhbNrBXIErAmBHnCTtpg8RQIwBdyd8og==
   dependencies:
     "@ethersproject/bignumber" "5.7.0"
     js-base64 "^3.7.5"
     pako "^2.1.0"
     viem "^0.3.1"
 
-"@sismo-core/sismo-connect-react@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@sismo-core/sismo-connect-react/-/sismo-connect-react-0.0.10.tgz#b0d57034d6e9d7703321260119ef8bfd681f9442"
-  integrity sha512-FB7LIsiM/ukzFaaKy4BP+OvWHz8x0caUSF8y+RVt5k9fhhmENh+JXOMbLOgNVykE+DoIlQgHARC3VpDlaaA6oA==
+"@sismo-core/sismo-connect-react@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@sismo-core/sismo-connect-react/-/sismo-connect-react-0.0.11.tgz#fa1e44e3c6414af7ef9b9f1c461437a81b57e3d6"
+  integrity sha512-XLRt4Bcl5ibrGMB2ZvIQ9hIJxO/IMJblfCg7uXv930EAiXl9o8h8OtHoXBfsBbBjkUDC5AqrwYE4PpciYMVTzQ==
   dependencies:
-    "@sismo-core/sismo-connect-client" "0.0.9"
+    "@sismo-core/sismo-connect-client" "^0.0.10"
 
 "@sismo-core/sismo-connect-server@^0.0.10":
   version "0.0.10"
@@ -3207,7 +3207,7 @@ util-deprecate@^1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
-viem@^0.3.1:
+viem@^0.3.1, viem@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/viem/-/viem-0.3.2.tgz#adfd45aeeeda96782623d867f1b59a3aba2f1932"
   integrity sha512-JhoTT3JSnya17JYOjt8QALICkLIg0SVfYtP7RxF3uqTzPQq7ZtDSrZGgHbEGwIFhMmdRTz9SwDVCjloeAbirFA==

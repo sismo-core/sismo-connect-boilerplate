@@ -7,8 +7,8 @@ contract TwoAuthsAndClaim is SismoConnect {
   bytes16 public immutable GROUP_ID;
   uint256 public counter;
 
-  constructor(bytes16 _appId, bytes16 groupId) SismoConnect(_appId) {
-    GROUP_ID = groupId;
+  constructor(bytes16 _appId, bytes16 _groupId) SismoConnect(_appId) {
+    GROUP_ID = _groupId;
   }
 
   function incrementWithSismoConnect(bytes memory response, uint256 number) public {

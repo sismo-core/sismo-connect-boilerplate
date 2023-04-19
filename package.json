@@ -3,13 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-http-header-size=24576' next dev",
+    "dev": "NODE_OPTIONS='--max-http-header-size=24576' next dev -p 3001",
     "build": "next build",
     "start": "NODE_OPTIONS='--max-http-header-size=24576' next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-abi": "script/bash/generate-abi.sh",
+    "deploy-local": "yarn deploy-auth-and-claim && yarn deploy-simple-auth && yarn deploy-simple-claim && yarn deploy-two-auths-and-claim && yarn generate-abi",
+    "deploy-auth-and-claim": "forge script DeployAuthAndClaim --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-simple-auth": "forge script DeploySimpleAuth --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-simple-claim": "forge script DeploySimpleClaim --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "deploy-two-auths-and-claim": "forge script DeployTwoAuthsAndClaim --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast"
   },
   "dependencies": {
-    "@sismo-core/sismo-connect-react": "^0.0.10",
+    "@sismo-core/sismo-connect-react": "^0.0.11",
     "@sismo-core/sismo-connect-server": "^0.0.10",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
@@ -22,7 +28,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.9",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "viem": "^0.3.2"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26"
