@@ -15,7 +15,7 @@
     "deploy-two-auths-and-claim": "forge script DeployTwoAuthsAndClaim --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast"
   },
   "dependencies": {
-    "@sismo-core/sismo-connect-react": "^0.0.10",
+    "@sismo-core/sismo-connect-react": "^0.0.11",
     "@sismo-core/sismo-connect-server": "^0.0.10",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
